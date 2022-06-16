@@ -71,9 +71,15 @@ Sitios web optimizados para motores de busqueda (SEO).
 
 https://www.c-sharpcorner.com/article/how-to-install-angular/
 
+### Comandos para el Primer proyecto
+
 - Tener npm instalado
 - Tener node instalado
 - npm install -g angular-cli //trae la ultima version
 - ng new nombre_proyecto //crea un proyecto con el nombre que le pongamos
 - cd nombre_proyecto //entramos al proyecto
 - ng serve //inicia el servidor
+- ng serve -o // Hace lo mismo que el comando ng serve pero corre un navegador en el puerto por defecto (Recomendado)
+- ng serve -o --port=4200 // Con este comando podemos elegir el puerto en el que se va a ejecutar nuestro proyecto
+
+POR DEFAULT ANGULAR CORRE EN EL PORT 4200

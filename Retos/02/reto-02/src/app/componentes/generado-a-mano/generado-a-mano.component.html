@@ -1,1 +1,55 @@
-<p>A MANO works!</p>
+<div class="container">
+
+   
+    
+    <!-- Ngstyle -->
+    <h3 [ngClass]="color" (click)="color ='green'">nombre {{alumno.nombre}}</h3>
+    <div appMiDirectiva>Ejemplo directiva</div>
+
+    <!-- ngFor example-->
+    <!-- Este seria un one-way -->
+    <ul>
+        <li *ngFor="let fruta of frutas">
+            {{fruta}}
+        </li>
+    </ul>
+
+    <!-- ngIf -->
+    <div *ngIf="mostrar"> Ejemplo If</div>
+
+    <!-- ngElse -->
+    <div *ngIf="mostrar; else elseBlock"> Cuando es verdadero</div>
+    <ng-template #elseBlock>Cuando es falso</ng-template>
+    
+    <!-- ngSwitch -->
+    <h3 (click)="valorSwitch ='valor2'">Valor 2</h3>
+    <h3 [ngClass]="color" (click)="valorSwitch ='valor3'">Valor 3</h3>
+    <div [ngSwitch]="valorSwitch">
+        <span *ngSwitchCase="'valor1'">valor1</span>
+        <span *ngSwitchCase="'valor2'">valor2</span>
+        <span *ngSwitchCase="'valor3'">valor3</span>
+        <span *ngSwitchCase="'valor4'">valor4</span>
+    </div>
+
+    <!-- Click -->
+    <h1 (click)="(ejemploClick())">Ejemplo Click</h1>
+
+    <!-- Binding -->
+    <!-- two way - Enlace en 2 sentidos cuando [()] afecta la variable  -->
+    <p>
+        <label for="nombre">Nombre: </label>
+        <input id="nombre" [(ngModel)]="nombre" />
+     </p>
+     <p>
+        <label for="apellido">Apellido: </label>
+        <input id="apellido" [(ngModel)]="apellido" />
+     </p>
+     <button (click)="verDatos()">Mostrar</button>
+     <button (click)="cargarDatos()">Cargar</button>
+     
+     <!-- Pipes -->
+     <div>{{(hoy | date:'medium') + 'Fecha'}}</div>
+     <!-- Formatea a json -->
+     <div>{{(hoy | json) + 'Fecha Json'}}</div>
+    <!-- <div>{{date(hoy,'shortTime') + 'Fecha'}}</div> -->
+</div>

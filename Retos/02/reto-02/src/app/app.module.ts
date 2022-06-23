@@ -7,6 +7,8 @@ import { ConCliComponent } from './componentes/con-cli/con-cli.component';
 import { GeneradoAManoComponent } from './componentes/generado-a-mano/generado-a-mano.component';
 import { ToolbarComponent } from './componentes/toolbar/toolbar.component';
 import { MainComponent } from './componentes/main/main.component';
+import { MiDirectivaDirectiva } from './directivas/mi-directiva.directive';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,11 +17,13 @@ import { MainComponent } from './componentes/main/main.component';
     ConCliComponent,
     GeneradoAManoComponent,
     ToolbarComponent,
-    MainComponent
+    MainComponent,
+    MiDirectivaDirectiva
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -12,9 +12,48 @@ import { Component, OnDestroy, OnInit } from "@angular/core";
   // Ciclo de vida del componente 
   // ngOnInit(): void {
   export class  GeneradoAManoComponent implements OnInit , OnDestroy {
+    
+    /* Variable */
+   
+    /* Object */
+    public alumno = {
+      nombre: 'Facundo',
+      apellidos: 'Colavini'
+    };
+    color: string = 'red';
+    public frutas = ['Banana', 'Pera', 'Manzana'];
+
+    objFrutas = [
+      {nombre: 'Banana'},{nombre: 'Pera'},{nombre: 'Manzana'}
+    ]
+    
+    nombre: string = '';
+    apellido: string = '';
+    public mostrar = true;
+    valorSwitch = 'valor1';
+    
+    hoy = new Date();
+
     constructor() { }
 
     ngOnInit(): void {}
 
     ngOnDestroy(): void {}
+    
+    ejemplo(variable: string) {
+     return 'Funcion';
+    }
+
+    ejemploClick () {
+      alert('Le diste click');
+    }
+    verDatos() {
+      console.log('Nombre: ', this.nombre);
+      console.log("Apellido: ", this.apellido)
+    }
+    cargarDatos() {
+      this.nombre = "Lionel"
+      this.apellido = "Messi"
+    }
+   
   }

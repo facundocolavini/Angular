@@ -1,0 +1,10 @@
+<div class="container">
+    <!-- Directiva Estructural -->
+    <ul class="list-group">
+        <li class=" list-group-item" *ngFor="let alumno of alumnos">
+            {{alumno.name}} {{alumno.lastName}}
+        <!-- Pipes -->
+        {{(alumno.birdthday | date:'medium')}}
+        </li>
+    </ul>
+</div>

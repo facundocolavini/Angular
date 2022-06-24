@@ -83,3 +83,7 @@ https://www.c-sharpcorner.com/article/how-to-install-angular/
 - ng serve -o --port=4200 // Con este comando podemos elegir el puerto en el que se va a ejecutar nuestro proyecto
 
 POR DEFAULT ANGULAR CORRE EN EL PORT 4200
+
+### Crear un componente
+
+ng generate nombre-de-componente

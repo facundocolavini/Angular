@@ -1,0 +1,39 @@
+
+<!-- Pipes Personalizados -->
+{{ 'nuevo texto' | conversor :'!' : 'lower'}}
+{{ texto | conversor :'?' : 'upper' }}
+{{ texto | conversor :'!' : 'lower' }}
+
+
+
+<button (click)="click()">Ver texto</button>
+
+<!-- Directivas personalizadas -->
+
+<br><br><br><br><br>
+
+<div class="w-50 d-flex" appMiPropiaDirectiva>Mi div con directiva</div>
+
+<span class="w-50 d-flex" appMiPropiaDirectiva>Texto Negro</span>
+<span class="w-50 d-flex" >Texto Fondo Blanco</span>
+
+
+<br><br><br><br><br>
+
+<span class="w-50 d-flex" appMiPropiaDirectiva [calificacion]="calificacion" *ngIf="visible">{{calificacion}}</span>
+<!-- <span class="w-50 d-flex" appMiPropiaDirectiva [calificacion]="30">30</span>
+<span class="w-50 d-flex" appMiPropiaDirectiva [calificacion]="55">55</span>
+<span class="w-50 d-flex" appMiPropiaDirectiva [calificacion]="78">78</span>
+<span class="w-50 d-flex" appMiPropiaDirectiva [calificacion]="100">100</span>
+ -->
+
+<button (click)="subirCalificacion()" >Subir Calificacion</button>
+<br><br><br><br><br>
+<button (click)="visible = !visible" >Visible</button>
+
+<br><br><br><br><br> 
+
+<!-- Directiva Estructurales -->
+<ng-container>
+    <span *appRepetir="10">Hola!<br></span>
+</ng-container>

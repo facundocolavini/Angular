@@ -14,14 +14,19 @@ import { StudentsListComponent } from './components/students-list/students-list.
 import { AddStudentsComponent } from './components/add-students/add-students.component';
 import { CoursesListComponent } from './components/courses-list/courses-list.component';
 import { HomeComponent } from './components/home/home.component';
-import { ModalEditComponent } from './components/modal-edit/modal-edit.component';
 import { StudentManagerComponent } from './components/student-manager/student-manager.component';
-
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { StudentDetailsComponent } from './components/student-details/student-details.component';
+import { ButtonsComponent } from './components/buttons/buttons.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditStudentComponent } from './components/edit-student/edit-student.component';
 
 const routes: Routes = [
-  {path: 'alumnos',component:StudentsListComponent},
-  {path: 'alumnos/agregar',component:AddStudentsComponent},
-  {path: 'cursos', component: CoursesListComponent},
+  {path: 'students',component:StudentManagerComponent},
+  {path: 'students/create',component:AddStudentsComponent},
+  {path: 'students/edit/:studentId',component:EditStudentComponent},
+  {path: 'students/student/:studentId',component:StudentDetailsComponent},
+  {path: 'courses', component: CoursesListComponent},
   {path: '', component: HomeComponent},
   {path: '**' , redirectTo:'/', pathMatch:'full'}
 ];
@@ -34,13 +39,19 @@ const routes: Routes = [
     AddStudentsComponent,
     CoursesListComponent,
     HomeComponent,
-    ModalEditComponent,
     StudentManagerComponent,
+    SpinnerComponent,
+    StudentDetailsComponent,
+    ButtonsComponent,
+    EditStudentComponent
+
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [RouterModule],
   providers: [],

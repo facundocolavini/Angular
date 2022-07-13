@@ -23,6 +23,24 @@ export class StudentsListComponent implements OnInit {
       this.errorMessage = error;
       this.loading = false;
     })
+    
+  }
+  editStudent(student: any): void {
+    console.log(student,'id student')
+    this.studentService.getStudentById(student).subscribe((data)=>{
+      
+    })
   }
 
+  deleteStudent(student: any): void {
+   this.studentService.deleteStudent(student).subscribe((data)=>{
+     this.studentService.getAllStudents().subscribe((data)=>{
+      this.students = data;
+      this.loading = false;
+   })
+   },(error)=>{
+    this.errorMessage = error;
+    this.loading = false;
+  })
+  }
 }

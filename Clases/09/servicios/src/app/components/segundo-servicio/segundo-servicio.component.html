@@ -1,0 +1,10 @@
+<h1>Segundo Servicio</h1>
+
+<div *ngFor="let alumno of miServicio.datos; let i= index">
+    <span>{{i}}-</span>
+    <span>Nombre:{{alumno.nombre}} </span>
+    <span>Edad:{{alumno.edad}} </span>
+    <span>Calificacion:{{alumno.calificacion}}</span>
+</div> 
+
+<p (click)="click()"></p>

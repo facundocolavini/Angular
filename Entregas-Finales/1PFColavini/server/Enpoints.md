@@ -1,5 +1,8 @@
 # Enpoints Utilizados con JSON Server
 
+Pararse en la carpeta /server y colocar en la consola el comando npm start para ejecutar el servido de
+JSON Server.
+
 ## GET
 
 http://localhost:9000/students

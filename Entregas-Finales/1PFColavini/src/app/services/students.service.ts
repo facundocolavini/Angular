@@ -19,13 +19,14 @@ export class StudentService {
     }
 
     //GET Student
-    public getContact(studentId: string): Observable<Students>{
+    public getStudentById(studentId: string): Observable<Students>{
         let dataUrl = `${this.serverUrl}/students/${studentId}`;
         return this.httpClient.get<Students>(dataUrl).pipe(catchError(this.handleError))
     }
     // Create Student 
     public createStudent(student: Students ): Observable<Students>{
         let dataUrl = `${this.serverUrl}/students`;
+        console.log(this.getAllStudents(),'TODOS')
         return this.httpClient.post<Students>(dataUrl,student).pipe(catchError(this.handleError))
     }
 
@@ -39,17 +40,6 @@ export class StudentService {
     public deleteStudent(studentId: string ): Observable<{}>{
         let dataUrl = `${this.serverUrl}/students/${studentId}`;
         return this.httpClient.delete<{}>(dataUrl).pipe(catchError(this.handleError))
-    }
-
-    //GET ALL Course
-    public getAllCourses(): Observable<Courses[]>{
-        let dataUrl = `${this.serverUrl}/coruses`;
-        return this.httpClient.get<Courses[]>(dataUrl).pipe(catchError(this.handleError))
-    }
-    //GET Single Course 
-    public getCourse(course: Courses): Observable<Courses>{
-        let dataUrl = `${this.serverUrl}/courses/${course.id}`;
-        return this.httpClient.get<Courses>(dataUrl).pipe(catchError(this.handleError))
     }
 
     //Error Handler

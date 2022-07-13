@@ -50,9 +50,12 @@
                   class=" text-danger">
                        Curso es requerido
                   </div>
-                    <div class="text-danger alert alert-danger my-2 alert-dismissible" role="alert" [ngClass]="{'d-none': !this.errorMessage}" >
+                  <div class="text-danger alert alert-danger my-2 alert-dismissible" role="alert" *ngIf="this.errorMessage && !this.posting" >
                     {{this.errorMessage}}
-                  </div>
+                </div>
+                <div class="text-sucess alert alert-success my-2 alert-dismissible dismiss" role="alert" *ngIf="this.posting " >
+                    Creado con exito!
+                </div>
                   <button type="submit" class="btn btn-success" >Submit</button>
                 
             </form>

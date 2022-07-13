@@ -31,9 +31,9 @@ export class StudentService {
     }
 
     // Update Student 
-    public updateStudent(student: Students, studentId: string ): Observable<Students>{
+    public updateStudent(formEditStudent: Students, studentId: string ): Observable<Students>{
         let dataUrl = `${this.serverUrl}/students/${studentId}`;
-        return this.httpClient.put<Students>(dataUrl,student).pipe(catchError(this.handleError))
+        return this.httpClient.put<Students>(dataUrl,formEditStudent).pipe(catchError(this.handleError))
     }
 
     //Delete Student 

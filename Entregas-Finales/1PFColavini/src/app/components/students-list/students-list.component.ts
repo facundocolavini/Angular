@@ -26,7 +26,8 @@ export class StudentsListComponent implements OnInit {
     
   }
   editStudent(student: any): void {
-    console.log(student,'id student')
+ 
+    
     this.studentService.getStudentById(student).subscribe((data)=>{
       
     })

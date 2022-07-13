@@ -13,6 +13,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class AddStudentsComponent implements OnInit {
   public formAddStudent : FormGroup;
   public loading : boolean = false;
+  public posting: boolean = false;
   public students:Students={} as Students;
   public errorMessage: string | null = null;
   public courses:Courses[] = [] as Courses[];
@@ -42,22 +43,15 @@ export class AddStudentsComponent implements OnInit {
     },(error) => { this.errorMessage = error;});
 
   }
-
-/*   change(e : any) {
-    console.log(e);
-    
-  } */
   
   onSubmit(valorFormulario: any) { 
-    console.log(this.formAddStudent.value,'submit')
-    console.log(valorFormulario,'submit validation')
-    console.log(this.formAddStudent,'submit')
     if(this.formAddStudent.status === 'VALID'){
       this.studentService.createStudent(this.formAddStudent.value).subscribe(student => {
-        console.log(student,'POST');
+        this.posting = true;
       });
     }else{
-       this.errorMessage = 'Error al crear un estudiante';
+       this.errorMessage = 'No se puede crear el estudiante :(';
+       this.posting = false;
     }
   }
 

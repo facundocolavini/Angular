@@ -30,7 +30,6 @@ export class StudentDetailsComponent implements OnInit {
       this.loading = true;
 
       this.studentsService.getStudentById(this.studentId).subscribe((dataStudent) => {
-        console.log(dataStudent, 'Student');
         this.student = dataStudent;
         this.coursesService.getCourse(this.student).subscribe((course) => {
           this.studsentCourse.name = course.name;

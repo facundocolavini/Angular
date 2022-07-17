@@ -1,0 +1,37 @@
+{
+  "students": [
+    {
+      "name": "Facundo a",
+      "lastName": "Colavini ",
+      "courseId": "1",
+      "id": 1
+    }
+  ],
+  "courses": [
+    {
+      "id": "1",
+      "name": "Fisica",
+      "teacher": "Martin Perez"
+    },
+    {
+      "id": "2",
+      "name": "Matematica",
+      "teacher": "Gonzalo Rodriguez"
+    },
+    {
+      "id": "3",
+      "name": "Programacion I",
+      "teacher": "Micaela Sanchez"
+    },
+    {
+      "id": "4",
+      "name": "Modelos Discretos",
+      "teacher": "Micaela Sanchez"
+    },
+    {
+      "id": "5",
+      "name": "Estructura y Base de datos",
+      "teacher": "Martin Perez"
+    }
+  ]
+}

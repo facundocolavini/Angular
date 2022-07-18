@@ -1,0 +1,31 @@
+<div class="container my-5" *ngIf="!loading && isExistStudent() && isExistCourse()">
+    <!-- Spinner -->
+
+    <div class="row text-center" *ngIf="loading"  >
+        <app-spinner></app-spinner>
+    </div>
+
+
+    <!-- Error Message -->
+
+    <div class="row" *ngIf="!loading && errorMessage" >
+        <div class="col">
+            <p class="text-danger fw-bold">{{errorMessage}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class=" col-sm-12  col-xs-12 col-md-6 col-lg-6 text-center  text-md-left  text-lg-left ">
+            <img [src]="student.imageProfile" alt="student image profile" class="img-thumbnail image-profile img-fluid img-responsive">
+        </div>
+        <div class=" col-sm-12 col-xs-12 col-md-6 col-lg-6 text-xs-center text-md-left text-lg-left ">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item fs-5"><span class="secnum fw-bold fs-5 mx-2">Nombre:</span>{{student.name}}</li>
+                <li class="list-group-item fs-5"><span class="secnum fw-bold fs-5 mx-2">Apellido:</span>{{student.lastName}}</li>
+                <li class="list-group-item fs-5"><span class="secnum fw-bold fs-5 mx-2">Curso:</span>{{studsentCourse.name}}</li>
+                <li class="list-group-item fs-5"><span class="secnum fw-bold fs-5 mx-2">Calificación Final:</span>{{student.calification}}</li>
+            </ul>
+        </div>
+    </div>
+   
+</div>

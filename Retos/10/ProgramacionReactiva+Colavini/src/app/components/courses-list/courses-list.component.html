@@ -1,0 +1,9 @@
+<div class="contariner" >
+    <ng-container *ngIf="$courses | async as courses">
+        <div class="row" *ngFor="let course of courses" >
+            <div> {{course.id}}</div>
+            <div> {{course.name}}</div>
+        </div>
+    </ng-container>
+ 
+</div>

@@ -16,7 +16,7 @@
             <form (ngSubmit)="onSubmit($event)" class="form-horizontal  fixed-width " [formGroup]="formEditStudent">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
-                    <input id="name"  type="text"[value]="student.name"  type="text"formControlName="name" class="form-control fs-6" id="name">
+                    <input id="name"  type="text"  type="text"formControlName="name" class="form-control fs-6" id="name">
                 </div>
                 <div [ngClass]="{'d-none': formEditStudent.get('name')?.valid ||  formEditStudent.get('name')?.pristine}"
                 class=" text-danger">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="lastName" class="form-label">Apellido</label>
-                    <input id="lastName" [value]="student.lastName" formControlName="lastName" type="text" class="form-control fs-6" id="lastName">
+                    <input id="lastName" formControlName="lastName" type="text" class="form-control fs-6" id="lastName">
                 </div>
                 <div [ngClass]="{'d-none': formEditStudent.get('lastName')?.valid ||  formEditStudent.get('lastName')?.pristine }"
                 class=" text-danger">
@@ -32,7 +32,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="imageProfile" class="form-label">Imagen de Perfil</label>
-                    <input id="imageProfile"  [value]="student.imageProfile" formControlName="imageProfile" type="text" class="form-control fs-6" id="imageProfile">
+                    <input id="imageProfile"  formControlName="imageProfile" type="text" class="form-control fs-6" id="imageProfile">
                 </div>
                 <div [ngClass]="{'d-none': formEditStudent.get('imageProfile')?.valid ||  formEditStudent.get('imageProfile')?.pristine } "
                 class=" text-danger">

@@ -1,5 +1,13 @@
 {
-  "students": [],
+  "students": [
+    {
+      "name": "facu2",
+      "lastName": "cola",
+      "imageProfile": "asd",
+      "courseId": "4",
+      "id": 1
+    }
+  ],
   "courses": [
     {
       "id": "1",

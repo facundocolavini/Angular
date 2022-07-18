@@ -11,10 +11,11 @@ import { Students } from "../models/students";
 export class CoursesService {
     private  serverUrl: string = `http://localhost:9000`;
     constructor(private httpClient: HttpClient){}
+
         //GET ALL Course
-        public getAllCourses(): Observable<Courses[]>{
+        public getAllCourses(): Observable<any>{
             let dataUrl = `${this.serverUrl}/courses`;
-            return this.httpClient.get<Courses[]>(dataUrl).pipe(catchError(this.handleError))
+            return this.httpClient.get<any>(dataUrl).pipe(catchError(this.handleError))
         }
         //GET Single Course Es de tipo estudiante ya que necesitamos el id del curso que selecciono el estudiante
         public getCourse(course: Students): Observable<Courses>{

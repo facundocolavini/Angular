@@ -25,14 +25,16 @@ export class EditStudentComponent implements OnInit {
   constructor( public fb: FormBuilder,  private studentService: StudentService,public activedRoute: ActivatedRoute,  public coursesService: CoursesService) {
     this.formEditStudent = this.fb.group({
       //Cada control se pasa como un nodo dentro de un objeto
-      name: [null , [Validators.required]],
-      lastName:  [null , [Validators.required]],
-      imageProfile:  [null , [Validators.required]],
-      courseId: new FormControl(null, [Validators.required])
+      name: ['' , [Validators.required]],
+      lastName:  ['' , [Validators.required]],
+      imageProfile:  ['' , [Validators.required]],
+      courseId: new FormControl('', [Validators.required])
     }); 
   }
 
   ngOnInit(): void {
+ 
+  
     this.activedRoute.paramMap.subscribe((param) => {
       this.studentId = param.get('studentId');
     });
@@ -47,6 +49,10 @@ export class EditStudentComponent implements OnInit {
       this.studentService.getStudentById(this.studentId).subscribe((dataStudent) => {
         this.loading = true;
         this.student = dataStudent;
+        this.formEditStudent.controls['name'].setValue(this.student.name)
+        this.formEditStudent.controls['lastName'].setValue(this.student.lastName)
+        this.formEditStudent.controls['imageProfile'].setValue(this.student.imageProfile)
+        this.formEditStudent.controls['courseId'].setValue(this.student.courseId)
 
         this.coursesService.getCourse(this.student).subscribe((course) => {
           this.studsentCourse.name = course.name;
@@ -64,22 +70,17 @@ export class EditStudentComponent implements OnInit {
   onSubmit(event: Event) {
     console.log(event,'id')
     if(this.studentId){
-        for (const property in this.formEditStudent.value) {
-          if(this.formEditStudent.value[property] === null || this.formEditStudent.value[property] === undefined || this.formEditStudent.value[property] === '') delete this.formEditStudent.value[property];
-
-        }
-      
-        if(
-          this.formEditStudent.valid
-        ){
-        this.studentService.updateStudent(this.formEditStudent.value,this.studentId).subscribe(data => {
-          this.updated = true;
-        })
-        }else{
-          
-         this.updated = false;
-          this.errorMessage = 'Faltan campos o hay un error al enviar los datos de edicion';
-        }
+      console.log(this.formEditStudent,'fomrstudent')
+      if(
+        this.formEditStudent.valid
+      ){
+      this.studentService.updateStudent(this.formEditStudent.value,this.studentId).subscribe(data => {
+        this.updated = true;
+      })
+      }else{
+        this.updated = false;
+        this.errorMessage = 'Faltan campos o hay un error al enviar los datos de edicion';
+      }
     }
   }
 

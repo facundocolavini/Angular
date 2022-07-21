@@ -1,0 +1,66 @@
+<!-- Explicación principal -->
+
+<form class="d-flex flex-column" [formGroup]="formulario" (ngSubmit)="submit($event)">
+    <span [ngClass]="{'text-danger': formulario.get('nombre')?.invalid}">Nombre:</span>
+    <input type="text" formControlName="nombre" required>
+    <span *ngIf="formulario.get('nombre')?.errors?.['required']">(El nombre no puede quedar vacío)</span>
+    <span>Edad:</span>
+    <input formControlName="edad" type="number">
+    <button type="submit" class="btn" [ngClass]="formulario.invalid ? 'btn-danger' : 'btn-primary'">Confirmar</button>
+</form>
+<br><br><br>
+
+<form #formPersona="ngForm" (ngSubmit)="submit(formPersona)">
+    <div class="form-group">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" name="nombre" [(ngModel)]="modeloPersona.nombre">
+        <label for="edad">Edad</label>
+        <input type="number" id="edad" name="edad" [(ngModel)]="modeloPersona.edad">
+        <button class="btn btn-primary">Guardar</button>
+    </div>
+</form>
+
+<button (click)="verPersona()">Ver modelo persona</button>
+<button (click)="cambiarEdad()">Cambiar edad</button>
+
+<br><br><br><br><br>
+
+<!-- Formulario Template Driven -->
+<div class="container">
+    <div [hidden]="submitted">
+        <h1>Hero Form</h1>
+        <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name"
+                    #name="ngModel">
+                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
+                    Name is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="alterEgo">Alter Ego</label>
+                <input type="text" class="form-control" id="alterEgo" [(ngModel)]="model.alterEgo" name="alterEgo">
+            </div>
+            <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+        </form>
+    </div>
+</div>
+
+<br><br><br>
+
+<!-- Formulario Reactive Forms -->
+<form (ngSubmit)="onSubmit()" [formGroup]="formGroupHero">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input id="name" type="text" class="form-control" formControlName="name">
+        <div [ngClass]="{'d-none': formGroupHero.get('name')?.valid || formGroupHero.get('name')?.pristine}" class="alert alert-danger">
+            Name is required
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="alterEgo">Alter Ego</label>
+        <input type="text" class="form-control" id="alterEgo" formControlName="alterEgo">
+    </div>
+    <button type="submit" class="btn btn-success" [disabled]="formGroupHero.invalid">Submit</button>
+</form>

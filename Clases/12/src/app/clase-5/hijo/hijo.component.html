@@ -1,0 +1,8 @@
+<div>
+    <span *ngIf="titulo">{{titulo}}:</span>
+    <ul>
+        <li *ngFor="let elem of elementos" (click)="click(elem)">
+            {{elem}}
+        </li>
+    </ul>
+</div>

@@ -1,5 +1,70 @@
-<div>a</div>
-<router-outlet></router-outlet>
-<button routerLink="/" type="button">Home</button>
-<button routerLink="/uno" type="button">Uno</button>
-<button routerLink="/dos" type="button">Dos</button>
+<div class="w-100 d-flex justify-content-center text-primary">HTML principal</div>
+
+<!--<div class="w-100 d-flex justify-content-center flex-column align-items-center">
+    Este es un encabezado para un componente hijo
+</div>
+
+<app-hijo
+    [elementos]="['Pera', 'Manzana']"
+    [titulo]="'Frutas'"
+    (clickElemento)="funcionClick($event)">
+</app-hijo>
+
+<button (click)="cambiarTitulo()">Cambiar titulo</button>-->
+
+<!--<app-formulario></app-formulario>-->
+
+<!--<app-material-ejemplos></app-material-ejemplos>-->
+
+<!--{{texto | conversor : '?' : 'upper'}}
+
+{{'NuEVo TexTO' | conversor : '!' : 'lower'}}
+
+{{'normal' | conversor}}
+
+<button (click)="click()">Ver texto</button>
+
+<br><br><br><br>
+
+<div class="w-50 d-flex justify-content-center" appMiPropiaDirectiva>Mi div con directiva</div>
+
+<br><br>-->
+
+<!--<span appMiPropiaDirectiva [calificacion]="calificacion" *ngIf="visible">{{calificacion}}</span><br>-->
+<!--<span appMiPropiaDirectiva [calificacion]="80">80</span><br>
+<span appMiPropiaDirectiva [calificacion]="60">60</span><br>
+<span appMiPropiaDirectiva [calificacion]="50">50</span><br>-->
+ <!--<br><br>
+ <button (click)="subirCalificacion()">Subir calificacion</button>
+ <br><br>
+ <button (click)="visible = !visible">Visible</button>
+ <br><br><br><br>
+
+<ng-container>
+    <span *appRepetir="10">
+        Hola!<br>
+    </span>
+</ng-container>-->
+
+<!--<app-prueba-servicios></app-prueba-servicios>
+<app-prueba-dos-servicios></app-prueba-dos-servicios>
+
+<div class="d-flex flex-column">
+    <app-prueba-observables></app-prueba-observables>
+    <br><br><br>
+    <app-prueba-dos-observables></app-prueba-dos-observables>
+    <br><br><br>
+    <app-prueba-tres-observables></app-prueba-tres-observables>
+</div>-->
+<div class="d-flex flex-column">
+    <h3>Esto es el APP Component</h3>
+    <div class="d-flex">
+        <button routerLink="/">Home</button>
+        <button routerLink="uno">Uno</button>
+        <button routerLink="dos">Dos</button>
+        <button (click)="irAMiVista()">Mi Vista</button>
+    </div>
+    <router-outlet></router-outlet>
+</div>
+
+

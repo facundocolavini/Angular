@@ -1,0 +1,31 @@
+<div class="container vh-100">
+    <div class="row my-4">
+        <div class="col p-0 d-flex border-bottom">
+            <h2 class="d-flex m-3 justify-content-center aling-item-center">Lista de alumnos</h2>
+            <button routerLink="/students/create"  class="p-2 m-3 fs-6 router-outlet btn btn-primary  ">
+                <span class="mx-1 fw-bold" aria-hidden="true">Agregar</span>
+                <i class=" m-1 fa fa-plus"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Spinner -->
+    <div class="row text-center" *ngIf="loading"  >
+        <app-spinner></app-spinner>
+    </div>
+
+    <!-- Error Message -->
+    <div class="row" *ngIf="!loading && errorMessage" >
+        <div class="col">
+            <p class="text-danger fw-bold">{{errorMessage}}</p>
+        </div>
+    </div>
+
+    <!-- Table -->
+    <div class="row" *ngIf="!loading && students.length > 0">
+      <app-students-list ></app-students-list>
+    </div>
+</div>  
+
+
+  

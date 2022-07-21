@@ -1,0 +1,4 @@
+<div class="d-flex flex-column mis-peliculas">
+    <span *ngFor="let pelicula of (pOS.peliculas$ | async)">{{pelicula.episode_id}}.-{{pelicula.title}}</span>
+</div>
+

@@ -1,0 +1,36 @@
+<h1 (click)="ejemploClick()">Click me!!!</h1>
+
+<h3 [ngClass]="color" (click)="valorSwitch = 'valor3'">Valor 3</h3>
+
+<div appMiDirectiva>Ejemplo directiva</div>
+<ul>
+    <li *ngFor="let fruta of frutas">
+        {{fruta.nombre}}
+    </li>
+</ul>
+<div *ngIf="mostrar">Ejemplo IF</div>
+<div [ngSwitch]="valorSwitch">
+    <span *ngSwitchCase="'valor1'">Valor 1</span>
+    <span *ngSwitchCase="'valor2'">Valor 2</span>
+    <span *ngSwitchCase="'valor3'">Valor 3</span>
+</div>
+
+<div *ngIf="mostrar; else elseBlock">Content to render when condition is true.</div>
+
+<ng-template #elseBlock>Content to render when condition is false.</ng-template>
+
+<p>
+    <label for="nombre">Nombre: </label>
+    <input id="nombre" [(ngModel)]="nombre" />
+</p>
+<p>
+    <label for="apellido">Apellido: </label>
+    <input id="apellido" [(ngModel)]="apellido" />
+</p>
+<button (click)="verDatos()">Mostrar</button>
+<button (click)="cargarDatos()">Cargar</button>
+
+<br><br><br><br>
+
+<div>{{(hoy | date: 'shortTime') + ' Fecha'}}</div>
+<div>{{alumno | json}}</div>

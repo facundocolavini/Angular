@@ -1,0 +1,7 @@
+
+<div *ngFor="let alumno of miServicio.datos; let i = index" (click)="click(i)">
+    <span>{{i + 1}}.-</span>
+    <span>Nombre: {{alumno.nombre}} </span>
+    <span>Edad: {{alumno.edad}}</span>
+</div>
+<button (click)="miServicio.modificar()">Modificar datos</button>

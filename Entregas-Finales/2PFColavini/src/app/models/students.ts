@@ -3,6 +3,6 @@ export interface Students {
     name: string;
     lastName: string;
     calification: string;
-    imageProfile: string;
+    imageProfile: string; // no se usa
     courseId: string;
 }

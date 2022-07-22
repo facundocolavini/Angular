@@ -28,7 +28,7 @@ export class AddStudentsComponent implements OnInit {
       //Cada control se pasa como un nodo dentro de un objeto
       name: [null , [Validators.required]],
       lastName:  [null , [Validators.required]],
-      imageProfile:  [null , [Validators.required]],
+      calification:  [null , [Validators.required]],
       courseId: new FormControl(null, [Validators.required])
      }); 
      

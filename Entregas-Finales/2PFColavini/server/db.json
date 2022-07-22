@@ -1,10 +1,10 @@
 {
   "students": [
     {
-      "name": "facu2",
-      "lastName": "cola",
-      "imageProfile": "asd",
-      "courseId": "4",
+      "name": "asd",
+      "lastName": "s",
+      "calification": "4",
+      "courseId": "1",
       "id": 1
     }
   ],

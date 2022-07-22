@@ -32,17 +32,17 @@
                      Apellido es requerido
                 </div>
                 <div class="mb-3">
-                    <label for="imageProfile" class="form-label">Imagen de Perfil</label>
-                    <input id="imageProfile" formControlName="imageProfile" type="text" class="form-control fs-6" id="imageProfile">
+                    <label for="calification" class="form-label">Calificación</label>
+                    <input id="calification" formControlName="calification" type="text" class="form-control fs-6">
                 </div>
-                <div [ngClass]="{'d-none': formAddStudent.get('imageProfile')?.valid ||  formAddStudent.get('imageProfile')?.pristine}"
+                <div [ngClass]="{'d-none': formAddStudent.get('calification')?.valid ||  formAddStudent.get('calification')?.pristine}"
                 class=" text-danger">
-                     Imagen es requerida
+                    calificacion es requerida
                 </div>
                 <div class="mb-3">
                     <label for="courseId" class="form-label">Cursos</label>
                     <select  formControlName="courseId"  class="form-control" class="form-select form-select-lg mb-3 fs-6 form-control" *ngIf="courses.length > 0">
-                        <option  aria-selected="false" selected disabled>Selecione el curso</option>
+                        <option  [defaultSelected]="" selected disabled>Selecione el curso</option>
                         <option value="{{course.id}}" id="course.id" *ngFor="let course of courses">{{course.name}}</option>
                     </select>
                   </div>

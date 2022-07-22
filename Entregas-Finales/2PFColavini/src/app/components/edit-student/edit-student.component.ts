@@ -27,7 +27,7 @@ export class EditStudentComponent implements OnInit {
       //Cada control se pasa como un nodo dentro de un objeto
       name: ['' , [Validators.required]],
       lastName:  ['' , [Validators.required]],
-      imageProfile:  ['' , [Validators.required]],
+      calification:  ['' , [Validators.required]],
       courseId: new FormControl('', [Validators.required])
     }); 
   }
@@ -51,7 +51,7 @@ export class EditStudentComponent implements OnInit {
         this.student = dataStudent;
         this.formEditStudent.controls['name'].setValue(this.student.name)
         this.formEditStudent.controls['lastName'].setValue(this.student.lastName)
-        this.formEditStudent.controls['imageProfile'].setValue(this.student.imageProfile)
+        this.formEditStudent.controls['calification'].setValue(this.student.calification)
         this.formEditStudent.controls['courseId'].setValue(this.student.courseId)
 
         this.coursesService.getCourse(this.student).subscribe((course) => {

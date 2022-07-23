@@ -1,8 +1,6 @@
-<div class="contariner" >
+
     <ng-container *ngIf="$courses | async as courses">
-        <div class="row" *ngFor="let course of courses" >
-            <div> {{course.id}}</div>
-            <div> {{course.name}}</div>
-        </div>
+        <ul class="list-group" *ngFor="let course of courses" >
+            <li class="list-group-item">{{course.id}} {{course.name}} </li>
+        </ul>
     </ng-container>
-</div>

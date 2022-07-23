@@ -41,7 +41,7 @@
                 <div class="mb-3">
                     <label for="courseId" class="form-label">Cursos</label>
                     <select formControlName="courseId"  class="form-control" class="form-select form-select-lg mb-3 fs-6 form-control" *ngIf="courses.length > 0" >
-                        <option  value=""  >Selecione el curso</option>
+                        <option selected disabled>Selecione el curso</option>
                         <option value="{{course.id}}" id="course.id" *ngFor="let course of courses">{{course.name}}</option>
                     </select>
                   </div>

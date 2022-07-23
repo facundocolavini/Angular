@@ -14,7 +14,7 @@
     <div class="row">
         <div class="col-12 border p-4 rounded-2">
             <h3 class="text-left my-2">Ingresar Alumno</h3>
-            <form (ngSubmit)="onSubmit($event)" class="form-horizontal  fixed-width " [formGroup]="formAddStudent">
+            <form (ngSubmit)="onSubmit($event)" class="form-horizontal  fixed-width" [formGroup]="formAddStudent">
                 <div class="mb-3">
                     <label for="name" class="form-label">Nombre</label>
                     <input id="name" formControlName="name" class="form-control fs-6" id="name">
@@ -42,7 +42,7 @@
                 <div class="mb-3">
                     <label for="courseId" class="form-label">Cursos</label>
                     <select  formControlName="courseId"  class="form-control" class="form-select form-select-lg mb-3 fs-6 form-control" *ngIf="courses.length > 0">
-                        <option  [defaultSelected]="" selected disabled>Selecione el curso</option>
+                        <option selected disabled>Selecione el curso</option>
                         <option value="{{course.id}}" id="course.id" *ngFor="let course of courses">{{course.name}}</option>
                     </select>
                   </div>
@@ -56,8 +56,7 @@
                 <div class="text-sucess alert alert-success my-2 alert-dismissible dismiss" role="alert" *ngIf="this.posting " >
                     Creado con exito!
                 </div>
-                  <button type="submit" class="btn btn-success" >Submit</button>
-                
+                  <button type="submit" class="btn btn-success" >Submit</button>     
             </form>
         </div>
     </div>

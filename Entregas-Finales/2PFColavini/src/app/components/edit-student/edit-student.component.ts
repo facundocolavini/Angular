@@ -5,7 +5,7 @@ import { Courses } from 'src/app/models/courses';
 import { Students } from 'src/app/models/students';
 import { StudentService } from 'src/app/services/students.service';
 import  { CoursesService } from 'src/app/services/courses.service';
-import { ThisReceiver } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-edit-student',
@@ -83,7 +83,4 @@ export class EditStudentComponent implements OnInit {
       }
     }
   }
-
-
-
 }
